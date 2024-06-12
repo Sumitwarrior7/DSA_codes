@@ -1,0 +1,5 @@
+#1) Same element ka XOR zero hota hai :-
+    22 XOR 22 = 0
+
+#2) Kisi bhi element ka XOR Zero ke sath wo element hi hota hai :-
+    33 XOR 0 = 33

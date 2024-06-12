@@ -1,0 +1,29 @@
+In Problem:
+    Given :
+        --> A number is valid if it follows some type of constraints:
+                --> Sum of digits of the number follows some criteria
+                --> Count of digits of the number following some criteria
+
+        --> Based on that we have to tell how many such numbers are valid in the range [l, r] (inclusive)
+
+
+
+* [l, r] can be calculated as '[0, r] - [0, l-1]'
+
+
+
+** Key Points to remember **
+1) we convert the (integer 'num' ---> string) as the num is mostly bigger than 10^9, so we can't directly iterate over all the numbers from 0->num
+2) We have to use DP, where we explore all numbers in the range [0, num] in a DFS way and we apply the condition on each number 
+   after we traverse all the digits of the number
+        --> if(ind >= s.size()) {
+                --> apply the condition
+            }
+3) The recursion function we use to calculate is generally in the format ;-
+        rec(string &s, int ind, bool av, int/bool condition, vector<vector<vector<int>>> &memo) {}   
+            --> 'av' : if it is true, we can chose any value [0, 9] for current ind to last ind of the number
+        
+4) This is the limit, upto which our for loop iterates for an index :
+        int limit = (av)?9: s[ind]-'0';   
+            --> If av is true : limit = 9
+            --> else : s[ind] in integer format    

@@ -1,0 +1,6 @@
+1) Whever you have a problem related to queries in which there are starting & ending points
+    ---> Try to relate it with subarray
+        ---> Then try to relate it with Prefix Sum 
+
+2) When some intervals are given in the form (l, r) and you have to figure out some expression
+    --> Try Sweep-Line algorithm

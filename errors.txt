@@ -1,0 +1,16 @@
+/* ----------------------------Runtime Error---------------------------- */
+#1 :-
+    Error Due to "Division by zero"
+
+
+
+
+/* ----------------------------Segementation Fault---------------------------- */
+#1 :-
+    Due to infinte loop
+
+
+
+/* ----------------------------TLE elimination---------------------------- */
+#1 :-
+    Reduce For-loops using (Maps, Arrays)

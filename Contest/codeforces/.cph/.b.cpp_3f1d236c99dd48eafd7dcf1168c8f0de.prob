@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"/home/sumit/DSA/Contest/codeforces/b.cpp","tests":[{"id":1706628212118,"input":"2\n0 10\n28 31","output":"46\n28"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/sumit/DSA/Contest/codeforces/b.cpp","group":"local","local":true}

@@ -1,0 +1,7 @@
+1) For taking MOD 
+    --> Dont use (1e9) expression OR pow() function
+    --> Always direct write number as it is (like 1000000000, 1000000000+7,.......)
+
+
+2) If you want to half the size of array whom you are trying to find all subsets possible
+    --> Use "Meet in the middle algorithm"

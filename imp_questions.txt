@@ -1,0 +1,8 @@
+https://codeforces.com/gym/489724/problem/B
+https://codeforces.com/problemset/problem/1909/C
+https://codeforces.com/contest/1898/problem/B
+https://leetcode.com/problems/first-missing-positive/
+https://codeforces.com/contest/1896/problem/C
+https://codeforces.com/contest/1927/problem/D 
+https://leetcode.com/problems/russian-doll-envelopes
+https://leetcode.com/problems/find-longest-awesome-substring

@@ -1,0 +1,6 @@
+1) Kabhi bhi agar question me pura ek vector memoize karna pad raha hai, to iska matlab hai ki wo pura vector memoize nahi hoga, 
+   balki i, j memoize honge jo vector ki ek certain range ko darshayeenge
+
+2) mostly hum DP me ek subproblem ko chunte hai us par first operation karte hai, but kabhi kabhi aisa bhi ho sakta hai ki 
+   question ko solve karne k liye, us operation ko last me solve karna hoga
+        ---> Think about 'Burst Baloons' problem

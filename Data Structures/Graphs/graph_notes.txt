@@ -1,0 +1,27 @@
+1) For printing shortest path in a graph b/w 2 nodes using BFS ----> * store {node, parent} in queue
+                                                                     * create a parent array which stores parent for all nodes in the graph
+
+
+2) To get the Longest path in an (undirected, unweighted) graph using BFS:-
+    --> Use a weight variable to store weight of the corresponding nodes.
+    --> Use bfs on any node(e.g. node no. 1) to find the node located farthest from the node(from node no. 1). 
+        You can do this by assigning 0 to the node( node no. 1) and then in every iteration assign the current nodes, 
+        one greater number than the node whose edge the current nodes are.( weight of current node = weight of parent node +1)
+    --> Use a visit variable to mark the visited nodes so that you don’t visit them again.
+    --> Iterate over every node to find the node with highest number.
+    --> Reallocate the weight and visit array variable to 0 and again use bfs from node found in last step to find the node located farthest from this node.        
+
+3) Whenver you get a question regarding one guy is trying to catch another guy in a graph
+    --> ## Use BFS ## : Think of calculating distances from intial position of both the guys seperately to all other nodes
+        --> 2 arrays(one for guy-1 and another 1 for guy-2)   
+        xxxxxxxxxxx
+        
+4) **Edges Reduction Technique in graph** : 
+    --> See the video (https://www.youtube.com/watch?v=Ea-3Tj3MVLA)
+
+
+5) We use Dijkstra algoirthm for finding 'minimum path' from node to another node in a weighted graph
+    --> Minimum path --> path having sum of weights as minimum
+                     --> choosing that path which has minimum value among all other paths having the value (value = maximum of all weights in a path)
+
+6) For odd length cycle detection --> use Graph coloring

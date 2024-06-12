@@ -1,0 +1,91 @@
+# --------------------INTEGER OVERFLOW-------------------- #
+"Both long long  &  long long int are the same in C++"
+Range : int  ---> (-10^9, 10^9)
+        long long / long long int  ---> (-10^18, 10^18)
+
+
+Max/Min : int  ---> INT_MAX, INT_MIN
+          long long / long long int  ---> LLONG_MAX, LLONG_MIN
+ 
+
+* This macro is used to define int as long long.
+
+Use Below :-
+#define int long long   
+#define INT_MIN LLONG_MIN
+#define INT_MAX LLONG_MAX
+Use "signed main" instead of "int main"
+
+
+
+# --------------------Ceil & floor-------------------- #
+Ceil : The ceil function returns the smallest integer value that is greater than or equal to the given argument "x"
+        For e.g., ceil(3.14) = 4
+
+Floor : The floor function returns the largest integer value that is less than or equal to the given argument "x"
+        For e.g., floor(3.14) = 3
+
+* while divinding integers for ceil & floor usage, use static typecasting : static_cast<double>(your_int_variable)
+
+
+
+# For bracket matching : Use Stack ds
+
+
+
+# --------------------Data Structure InterConversion-------------------- #
+* String <--> Int  
+                ------> (string -> int) =  stoi(str_val)
+                ------> (int -> string) =  to_string(int_val)
+
+* Char <--> Int  
+                ------> (Char -> int) =>   char c = chr_val - '0'
+                ------> (int -> char) =>    int i = int_val - '0'
+
+
+
+# --------------------Floating-point precision issues-------------------- #
+* When dealing with floating-point numbers, it's generally a good idea to avoid direct equality comparisons due to precision issues
+* Instead, use epsilon value to check if two floating-point numbers are close enough
+* Floating point numbers : float, double
+        const double EPSILON = 1e-9;
+        double am;
+        double dm;
+        if we want to check whether am is equal to dm or not ----> if (abs(am - dm) < EPSILON)
+
+
+
+# --------------------Points to remember for DP-------------------- #
+1) During memoization, if there is a base case which checks for "out of bound" values in its condition
+        ---> memo will get the out of bound values in its parameters due to which memo will throw error
+                ---> "runtime error: addition of unsigned offset"
+
+                
+
+# --------------------Points to remember for Binary tree-------------------- #
+1) Whenever ther is question like finding diameter, longest path, maximum path sum
+        ---> At each node, try to return the longest continuous path containing the node under recursion [ return 1+max(l, r) ]
+        ---> Actual ans will be stored in a variable [ ans = max(ans, 1+l+r) ]
+
+
+
+# --------------------Always remember this algo, while detecting cycles-------------------- #
+Two-Pointer Method (Floyd's Cycle-Finding Algorithm)
+        --> This method uses 2 pointers that traverse the list at different speeds. The slow pointer moves 1 step at a time, 
+            while the fast pointer moves 2 steps. If there is a cycle, the fast pointer will eventually catch up to the slow pointer.
+            slow = slow->next;
+            fast = fast->next->next;      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
