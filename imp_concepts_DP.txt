@@ -1,5 +1,5 @@
 1) Burst Ballon concept:-
-    --> You take any ballon in middle positioned elemnt of all the balloons, and burst it at the largest
+    --> You take any ballon in middle positioned elemnt of all the balloons, and burst it at the last
         --> (usually when we take an elemnt we burst it first, but here we are bursting it at last)
             --> Thats the concept
     #Refer : https://leetcode.com/problems/burst-balloons/description/

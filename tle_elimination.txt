@@ -1,0 +1,3 @@
+/* ------------------< If TLE is occuring by very little time >------------------ */
+1) Try to convert 'vectors' to 'array'
+    --> if you are getting errors in class for above, convert 'class' to 'struct'

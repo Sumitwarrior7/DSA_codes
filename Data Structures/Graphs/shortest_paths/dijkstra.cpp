@@ -36,7 +36,7 @@ vector<int> dijkstra_set(int n, vector<vector<pair<int, int>>> &adj, int source)
 
 /* Approach 2 : Using Priority Queue */
 vector<int> dijkstra_pq(int n, vector<vector<pair<int, int>>> adj, int source_node) {
-    // Stores {distance from source, node,}
+    // Stores {distance from source, node}
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
     vector<int> dis_arr(n, INT_MAX);
@@ -48,12 +48,13 @@ vector<int> dijkstra_pq(int n, vector<vector<pair<int, int>>> adj, int source_no
         int node = pq.top().second;
         pq.pop();
 
-        for (auto nbr : adj[node])
-        {
+        // Very Powerful line in terms of Time Complexity
+        if (dis_arr[node] < dis) continue;
+
+        for (auto nbr : adj[node]) {
             int wt = nbr.first;
             int v = nbr.second;
-            if (dis + wt < dis_arr[v])
-            {
+            if (dis + wt < dis_arr[v]) {
                 dis_arr[v] = dis + wt;
                 pq.push({dis + wt, v});
             }

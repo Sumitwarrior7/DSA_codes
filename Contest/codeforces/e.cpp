@@ -1,57 +1,41 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
 class Solution {
 public:
-    int rec(vector<int> &arr, int ind, int msk, vector<int> &vec, bool et) {
-        if(ind >= arr.size()) {
-            if(et == false) return 0;
-            else return 1;
-        }
-        
-        int ans = 0;
-        // ind not taken
-        int c1 = rec(arr, ind+1, msk, vec, (et)?true:false);
-        ans += c1;
+    bool rec(TreeNode* n1, TreeNode* n2) {
+        if(n1->val != n2->val) return false;
 
-        // ind taken
-        int nm = msk;
-        bool take = true;
-        
-        if(arr[ind] != 1) {
-            for(int i=0; i<10; i++) {
-                if(arr[ind]%vec[i] == 0) {
-                    if((nm&(1<<i)) == 0) {
-                        nm = (nm^(1<<i));
-                    }
-                    else {
-                        take = false;
-                        break;
-                    }
-                }
-            }
+        if(n1->left == NULL && n2->right != NULL) return false;
+        else if(n1->left != NULL && n2->right == NULL)return false;
+        else if(n1->left != NULL && n2->right != NULL) {
+            if(rec(n1->left, n2->right) == false) return false;
         }
 
-        if(take) ans += rec(arr, ind+1, nm, vec, true);
-        return ans;
+        if(n1->right == NULL && n2->left != NULL) return false;
+        else if(n1->right != NULL && n2->left == NULL)return false;
+        else if(n1->right != NULL && n2->left != NULL) {
+            if(rec(n1->right, n2->left) == false) return false;
+        }
+        return true;
     }
 
-    int squareFreeSubsets(vector<int>& nums) {
-        vector<int> arr;
-        vector<int> rem = {4, 8, 9, 12, 16, 18, 20, 24, 25, 27, 28};
-        for(auto it: nums) {
-                bool prs = false;
-                for(auto item: rem) {
-                    if(it == item) {
-                        prs = true;
-                        break;
-                    }
-                }
-                if(prs) continue;
-                else arr.push_back(it);
+    bool isSymmetric(TreeNode* root) {
+        if(root->left == NULL && root->right == NULL) return true;
+        else if(root->left == NULL) return false;
+        else if(root->right == NULL) return false;
+        else {
+            bool check = rec(root->left, root->right);
+            if(check) return true;
+            else return false;
         }
-        for(auto it: arr) cout << it << " ";
-
-        vector<int> v = {2,3,5,7,11,13,17,19,23,29};
-
-        int ans = rec(arr, 0, 0, v, false);
-        return ans;
     }
 };

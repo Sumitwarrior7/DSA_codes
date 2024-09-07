@@ -36,20 +36,6 @@ public:
             rank[ulp_u]++;
         }
     }
-
-    void unionBySize(int u, int v) {
-        int ulp_u = findUPar(u);
-        int ulp_v = findUPar(v);
-        if (ulp_u == ulp_v) return;
-        if (size[ulp_u] < size[ulp_v]) {
-            parent[ulp_u] = ulp_v;
-            size[ulp_v] += size[ulp_u];
-        }
-        else {
-            parent[ulp_v] = ulp_u;
-            size[ulp_u] += size[ulp_v];
-        }
-    }
 };
 
 int spanningTree(int n, vector<vector<int>> adj[]) {
@@ -74,7 +60,7 @@ int spanningTree(int n, vector<vector<int>> adj[]) {
         int v = it.second.second;
         if (ds.findUPar(u) != ds.findUPar(v)) {
             mstWt += wt;
-            ds.unionBySize(u, v);   // Alternatively unionByRank can also be used
+            ds.unionByRank(u, v); 
         }
     }
     return mstWt;
@@ -98,8 +84,7 @@ int main() {
         adj[it[1]].push_back(tmp);
     }
 
-    Solution obj;
-    int mstWt = obj.spanningTree(V, adj);
+    int mstWt = spanningTree(V, adj);
     cout << "The sum of all the edge weights: " << mstWt << endl;
     return 0;
 }

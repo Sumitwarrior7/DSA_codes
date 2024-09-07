@@ -6,14 +6,23 @@ using namespace std;
 #define min4(a, b, c, d) min(d, min(c, min(a, b)))
 #define max3(a, b, c) max(c, max(a, b))
 #define max4(a, b, c, d) max(d, max(c, max(a, b)))
-extern vector<char> charMap = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-extern map<char, int> mp = {
-        {'a', 0},{'b', 1},{'c', 2},{'d', 3},{'e', 4},
-        {'f', 5},{'g', 6},{'h', 7},{'i', 8},{'j', 9},
-        {'k', 10},{'l', 11},{'m', 12},{'n', 13},{'o', 14},{'p', 15},
-        {'q', 16},{'r', 17},{'s', 18},{'t', 19},{'u', 20},
-        {'v', 21},{'w', 22},{'x', 23},{'y', 24},{'z', 25}
-    };
+
+// My own macros
+#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define FOR(i, n) for (int i = 0; i < n; i++)
+#define FORI(i, a, b) for (int i = a; i < b; i++)
+#define vi vector<int>
+#define pii pair<int, int>
+/*
+    वसुधा का नेता कौन हुआ? भूखण्ड-विजेता कौन हुआ?
+    अतुलित यश क्रेता कौन हुआ? नव-धर्म प्रणेता कौन हुआ?
+    जिसने न कभी आराम किया,
+    विघ्नों में रहकर नाम किया।
+*/
+// Notes :-
+// ASCII -> UpperCase letter : [65, 90]
+// ASCII -> LowerCase letter : [97, 122]
+// ASCII -> Number : [48, 57] for {0, 1, 2, ... 9}
 
 
 
@@ -25,11 +34,9 @@ int func(int n, vector<int> &v) {
 signed main() {
     int n;
     cin >> n;
-    vector<int> v;
-    for (int i = 0; i < n; i++) {
-        int vi;
-        cin >> vi;
-        v.push_back(vi);
+    vi v(n);
+    FOR(i, n) {
+        cin >> v[i];
     } 
     int ans = func(n, v);
     cout << ans;
@@ -44,14 +51,23 @@ using namespace std;
 #define min4(a, b, c, d) min(d, min(c, min(a, b)))
 #define max3(a, b, c) max(c, max(a, b))
 #define max4(a, b, c, d) max(d, max(c, max(a, b)))
-extern vector<char> charMap = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-extern map<char, int> mp = {
-        {'a', 0},{'b', 1},{'c', 2},{'d', 3},{'e', 4},
-        {'f', 5},{'g', 6},{'h', 7},{'i', 8},{'j', 9},
-        {'k', 10},{'l', 11},{'m', 12},{'n', 13},{'o', 14},{'p', 15},
-        {'q', 16},{'r', 17},{'s', 18},{'t', 19},{'u', 20},
-        {'v', 21},{'w', 22},{'x', 23},{'y', 24},{'z', 25}
-    };
+
+// My own macros
+#define FAST_IO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define FOR(i, n) for (int i = 0; i < n; i++)
+#define FORI(i, a, b) for (int i = a; i < b; i++)
+#define vi vector<int>
+#define pii pair<int, int>
+/*
+    वसुधा का नेता कौन हुआ? भूखण्ड-विजेता कौन हुआ?
+    अतुलित यश क्रेता कौन हुआ? नव-धर्म प्रणेता कौन हुआ?
+    जिसने न कभी आराम किया,
+    विघ्नों में रहकर नाम किया।
+*/
+// Notes :-
+// ASCII -> UpperCase letter : [65, 90]
+// ASCII -> LowerCase letter : [97, 122]
+// ASCII -> Number : [48, 57] for {0, 1, 2, ... 9}
 
     
 
@@ -66,8 +82,8 @@ signed main() {
     while(t--) {
         int n;
         cin >> n;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++) {
+        vi v(n);
+        FOR(i, n) {
             cin >> v[i];
         } 
 

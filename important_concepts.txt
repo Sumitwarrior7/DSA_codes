@@ -67,6 +67,8 @@ Floor : The floor function returns the largest integer value that is less than o
         ---> At each node, try to return the longest continuous path containing the node under recursion [ return 1+max(l, r) ]
         ---> Actual ans will be stored in a variable [ ans = max(ans, 1+l+r) ]
 
+2) In most 'Tree' problems, they are solved using recursion(not DP)
+
 
 
 # --------------------Always remember this algo, while detecting cycles-------------------- #
@@ -77,14 +79,29 @@ Two-Pointer Method (Floyd's Cycle-Finding Algorithm)
             fast = fast->next->next;      
 
 
+# --------------------Points to remember for queries based problem-------------------- #
+1) Try to think of Segment Tree first
+   If segment tree approach is not working, then try to 'sort' the queries-array and think may be it can help reduce time complexity
+2) If queries-based problem is related to "GRAPH" --> Try to think of 'DSU'
+3) If queries-based problem is related to "INTERVALS" --> Try to 'sort' the intervals-array, for that we can use heaps, sets, multisets
 
 
+# --------------------PALINDROME based problem-------------------- #
+If 'palindrome' based problem comes
+        --> Think of matching string with reversed string 
+        --> Think of taking mid as starting point for palindrome 
+                --> simultaneously go left and right, and if both are equal->repeat the step
+                --> check for both odd sized and even sized palindromes
+        --> Think of DP
+        --> Always remember in a palindrome(Useful in problems where you've to check wther its poosible to make palindrome by any rearranging the characters in the string) :-
+                you can either have 1 character with odd frequency in palindrome 
+                OR you will have no character with odd frequency
 
 
-
-
-
-
+# --------------------Points to remember for BITS MANIPULATION-------------------- #
+1) If you are using masks like (1<<i), it will work fine for 'int' values i.e., for 32 bits
+        --> But above technique will fail for 'long long' values i.e., for 64 bits
+                --> For that use (1LL<<i)
 
 
 

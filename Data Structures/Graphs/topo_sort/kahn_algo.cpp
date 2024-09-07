@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/* Topological Sort usin BFS */
+/* Topological Sort using BFS */
 vector<int> topologicalSort(vector<vector<int>> &adj, int V) {
     // Storing Indegress of each nodes
     vector<int> indegree(V);
@@ -9,7 +9,7 @@ vector<int> topologicalSort(vector<vector<int>> &adj, int V) {
         for (auto it : adj[i]) indegree[it]++;
     }
 
-    // Queue store only those nodes whihc have indegree as 0
+    // Queue store only those nodes which have indegree as 0
     queue<int> q;
     for (int i = 0; i < V; i++) {
         if (indegree[i] == 0) q.push(i);
@@ -25,7 +25,7 @@ vector<int> topologicalSort(vector<vector<int>> &adj, int V) {
         for (auto it : adj[node]) {
             indegree[it]--;
             // If indegree becomes 0, push it to the queue
-            if (indegree[it] == 0)q.push(it);
+            if (indegree[it] == 0) q.push(it);
         }
     }
 

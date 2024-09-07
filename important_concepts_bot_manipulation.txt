@@ -1,0 +1,2 @@
+1) whenver you are to find 'a XOR b' and now you wnat to find what is a & b individually 
+    --> You can use 'concept of buckets' in O(1) space

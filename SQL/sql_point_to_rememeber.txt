@@ -1,0 +1,4 @@
+1) Whenever you want to find 'first value' of 'each groups' in a table based on a column 
+    --> First write SQL query to extract the relevant columns which contains 'grouped_column' and 'min(column) under the group'
+    --> 'Inner join' the above table so formed with the table given in problem based on the 2 columns we have extracted above
+    probelm link : https://leetcode.com/problems/product-sales-analysis-iii/description/?envType=study-plan-v2&envId=top-sql-50
